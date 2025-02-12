@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+echo "pre-push"
+npx honkit build
+cd _book
+git init
+git remote add origin git@github.com:woodlai/note.git
+git branch -m honkit
+git add .
+git commit -m 'deploy'
+git push origin honkit --force
